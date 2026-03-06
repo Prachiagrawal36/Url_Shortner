@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16 # Adjust version as needed
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data # Mounts named volume 'pgdata' to the data directory
+
+volumes:
+  pgdata: # Declares the named volume
